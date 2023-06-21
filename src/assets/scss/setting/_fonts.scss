@@ -1,0 +1,85 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Grandiflora+One&display=swap');
+    
+@font-face {
+    font-family: "GSK";
+    font-style: normal;
+    font-weight: 300;
+    src: url("https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansLight.eot");
+    src: url("https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansLight.eot?#iefix")
+        format("embedded-opentype"),
+      url("https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansLight.woff2")
+        format("woff2"),
+      url("https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansLight.woff")
+        format("woff"),
+      url("https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansLight.ttf")
+        format("truetype");
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "GSK";
+    font-style: normal;
+    font-weight: 400;
+    src: url("https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.eot");
+    src: url("https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.eot?#iefix")
+        format("embedded-opentype"),
+      url("https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.woff2")
+        format("woff2"),
+      url("https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.woff")
+        format("woff"),
+      url("https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.ttf")
+        format("truetype");
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "GSK";
+    font-style: normal;
+    font-weight: 500;
+    src: url("https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.eot");
+    src: url("https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.eot?#iefix")
+        format("embedded-opentype"),
+      url("https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.woff2")
+        format("woff2"),
+      url("https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.woff")
+        format("woff"),
+      url("https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.ttf")
+        format("truetype");
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'ChosunNm';
+    font-weight: normal;
+    font-style: normal;
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/ChosunNm/ChosunNm.eot');
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/ChosunNm/ChosunNm.eot?#iefix') format('embedded-opentype'),
+         url('https://cdn.jsdelivr.net/gh/webfontworld/ChosunNm/ChosunNm.woff2') format('woff2'),
+         url('https://cdn.jsdelivr.net/gh/webfontworld/ChosunNm/ChosunNm.woff') format('woff'),
+         url('https://cdn.jsdelivr.net/gh/webfontworld/ChosunNm/ChosunNm.ttf') format("truetype");
+    font-display: swap;
+}
+  
+
+
+.GSK {
+    font-family: "GSK";
+}
+
+.GFO {
+    font-family: "Grandiflora One";
+}
+.CN {
+  font-family: "ChosunNm";
+}
+@for $i from 1 through 9 {
+    $weight: $i*100;
+
+    .TheJamsil#{$i}{
+        font-family: "TheJamsil";
+        font-weight: $weight;
+    }
+
+    .Rebecca#{$i}{
+        font-family: "Rebecca";
+        font-weight: $weight;
+    }
+}

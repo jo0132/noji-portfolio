@@ -1,0 +1,13 @@
+@charset "UTF-8";
+
+// setting
+
+@import "setting/fonts.scss";
+@import "setting/bass.scss";
+@import "setting/mixins.scss";
+
+// commons
+@import "commons/commons.scss";
+
+// start
+@import "section/section.scss";

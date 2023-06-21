@@ -1,0 +1,154 @@
+.parallax__info {
+    position: fixed;
+    left: 20px;
+    bottom: 20px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    line-height: 1.4;
+}
+
+#section01 {
+    width: 100%;
+    height: 100vh;
+
+    // background-color: #000;
+    overflow: hidden;
+    position: relative;
+    .text_wrap {
+        text-align: center;
+        margin: 2vw 5vw ;
+
+        > span {
+            display: inline-block;
+            font-size: 2.5vw;
+            text-transform: uppercase;
+            background-color: #000;
+            color: #fff;
+            padding: 1vw;
+            font-weight: bold;
+            border-radius: 50vw;
+            margin: 1vw;
+        }
+    }
+    .img_wrap {
+        position: absolute;
+        left: 20vw;
+        top: 25vh;
+        // margin: 13vw 20vw;
+        width: 50vw;
+        height: 30vw;
+        padding: 1.5vw;
+
+        > span {
+            display: inline-block;
+            font-size: 5.5vw;
+            text-transform: uppercase;
+            border-radius: 2vw;
+            padding: 0.2vw 6vw;
+            color: #fff;
+            font-weight: bold;
+            display: none;
+            
+            > img {
+                position: absolute;
+                display: none;
+            } 
+            .i_img01 {
+                left: 40vw;
+                top: -2vw;
+                transform: rotate(15deg);
+                height: 18vw;
+                width: 18vw;
+            }
+            .i_img02 {
+                left: -15vw;
+                top: -5vw;
+                height: 12vw;
+                width: 12vw;
+            }
+            .i_img03 {
+                left: 42vw;
+                top: -2.5vw;
+                height: 12vw;
+                width: 12vw;
+            }
+        }
+        .i1 {
+            background-color: #EE24CD;
+            transform: rotate(-15deg);
+
+        }
+        .i2 {
+            color: #000;
+            border-radius: 10vw;
+            background-color: #19FE03;
+            position: relative;
+            width: 48vw;
+            margin-left: 10vw;
+            z-index: 99;
+        }
+        .i3 {
+            background-color: #0033FF;
+            transform: rotate(6.16deg);
+            position: relative;
+        }
+    }
+}
+#section02 {
+    width: 100%;
+    height: 100vh;
+    // background-color: #F8E4D9;
+    background:linear-gradient(to bottom, #F8E4D9 0%, #F6E3D5 70%,#F1D0BF 100%);
+    overflow: hidden;
+    display: flex;
+
+    .left {
+        height: 100vh;
+        width: 50vw;
+        background-image: url(../../images/profile_02.png);
+        object-fit: cover;
+    }
+    .right {
+        // background-color: #fff;
+        height: 33.5vw;
+        width: 30vw;
+        margin: 12vh 7vw 0 3.9vw;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+
+
+        .sign {
+            height: 57vw;
+            width: 31vw;
+            position: relative;
+            z-index: 9999;
+        }
+        .section02_desc {
+            margin-top: 1vw;
+            padding: 0 2.5vw;
+            >p {
+                font-size: 0.8vw;
+                line-height: 1.5;
+            }
+            
+        }
+    }
+}
+#section03 {
+    width: 100%;
+    height: 100vh;
+    background-color: #c9aa9a;
+
+}
+#section04 {
+    width: 100%;
+    height: 100vh;
+    background-color: #bd7b59;
+
+}
+
+
+
