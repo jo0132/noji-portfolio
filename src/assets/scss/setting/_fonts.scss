@@ -70,6 +70,7 @@
 .CN {
   font-family: "ChosunNm";
 }
+
 @for $i from 1 through 9 {
     $weight: $i*100;
 
