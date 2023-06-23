@@ -12,9 +12,11 @@
 #section01 {
     width: 100%;
     height: 100vh;
-
+    display: none;
     // background-color: #000;
     overflow: hidden;
+    display: flex;
+    align-items: center;
     position: relative;
     .text_wrap {
         text-align: center;
@@ -35,7 +37,7 @@
     .img_wrap {
         position: absolute;
         left: 20vw;
-        top: 25vh;
+        top: auto;
         // margin: 13vw 20vw;
         width: 50vw;
         height: 30vw;
@@ -103,6 +105,7 @@
     background:linear-gradient(to bottom, #F8E4D9 0%, #F6E3D5 70%,#F1D0BF 100%);
     overflow: hidden;
     display: flex;
+    align-items: center;
 
     .left {
         height: 100vh;
@@ -114,11 +117,10 @@
         // background-color: #fff;
         height: 33.5vw;
         width: 30vw;
-        margin: 12vh 7vw 0 3.9vw;
+        margin: 0 7vw 0 3.9vw;
         display: flex;
         flex-direction: column;
-        align-items: flex-end;
-        opacity: 0;
+        // opacity: 0;
 
         .sign {
             height: 57vw;
@@ -130,7 +132,7 @@
             margin-top: 1vw;
             padding: 0 2.5vw;
             > p {
-                font-size: 0.8vw;
+                font-size: 1rem;
                 line-height: 1.5;
             }
             
@@ -140,22 +142,78 @@
 #section03 {
     width: 100%;
     height: 100vh;
-    background-color: #c9aa9a;
+    background-color: #fff;
+    padding: 0 15vw 0 38vw;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+
+
     > div {
-        background-color: #fff;
-        width: 834px;
-        height: 640px;
-        margin: 20vw;
-
-
+        // background-color: #fff;
+        width: 43.5vw;
+        height: 33.3vw;
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: flex-end;
+        position: relative;
+        .section03_main_img {
+            object-fit: cover;
+            width: 21.5vw;
+            height: 33.5vw;
+        }
+        p {
+            display: inline-block;
+            width: 407px;
+            height: 146px;
+            margin-left: 20px;
+            margin-bottom: -40px;
+            font-size: 1rem;
+        }
+        .smail {
+            position: absolute;
+            width: 3.3vw;
+            height: 3.3vw;
+            margin: 5px;
+        }
+        .small_sign {
+            position: absolute;
+            width: 8vw;
+            height: 5.5vw;
+            object-fit: cover;
+            left: -3.6vw;
+            top: -2.8vw;
+            
+        }
     }
 
 }
 #section04 {
     width: 100%;
     height: 100vh;
-    background-color: #bd7b59;
-
+    // background-color: #999;
+    justify-content: center;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    > div {
+        background-color: #fff;
+        height: 33.5vw;
+        width: 21.5vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        .section04_main_img {
+            object-fit: cover;
+            width: 21.5vw;
+            height: 33.5vw;
+        }
+        .section04_main_title {
+            position: absolute;
+            font-size: 13vw;
+        }
+    }
 }
 
 

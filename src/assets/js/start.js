@@ -1,6 +1,16 @@
 const spanText = Array.from(document.getElementsByClassName('text'));
 const sectionBg01 = document.getElementById('section01');
+const sectionBg02 = document.getElementById('section02');
 const ani01 = gsap.timeline();
+
+ani01.to(sectionBg01, {
+    position: 'fixed',
+    zIndex: 99999,
+});
+
+gsap.set(sectionBg02, {
+    opacity: 0,
+});
 
 gsap.set(spanText, {
     y: '-500px',
@@ -9,15 +19,13 @@ gsap.set(spanText, {
 });
 
 ani01.to(spanText, {
-    duration: 0.5,
+    duration: 1,
     y: 0,
     rotation: 1080,
     opacity: 1,
     stagger: {
-        each: 0.2,
+        amount: 3,
         from: 'random',
-        grid: 'auto',
-        totalDuration: 1300,
     },
 });
 
@@ -59,36 +67,52 @@ ani01.to('.img_wrap .i3 img', {
 ani01
     .to('.img_wrap .i2 img', {
         // scale: 10,
-        translateX: 600,
+        delay: 2,
+        translateX: '29vw',
     })
     .to('.img_wrap .i2 img', {
+        duration: 0.5,
         scale: 6,
     });
+
+ani01.to(sectionBg02, {
+    opacity: 1,
+});
 ani01.to('#section01', {
-    duration: 0.5,
+    delay: -0.5,
+    duration: 0.1,
     display: 'none',
     opacity: 0,
     ease: 'sine.out',
 });
+
 gsap.to('#section01', {
     y: '#section02',
+});
+
+// 페이지 로드 시 실행되는 함수
+window.addEventListener('load', function () {
+    goToSession1();
 });
 
 // ScrollTrigger 플러그인 초기화
 gsap.registerPlugin(ScrollTrigger);
 
 const ani02_1 = gsap.timeline();
-ani02_1.from('#section2 > .left', { opacity: 1 }, 'a');
+ani02_1.from('#section2 > .left', { opacity: 0, y: 500 }).to('#section2 > .left', {
+    opacity: 1,
+    y: 0,
+});
 
-ScrollTrigger.create({
+ScrollTrigger.to({
     animation: ani02_1,
     trigger: '#section2',
     start: 'top top',
     end: '+=3000',
     scrub: true,
-    pin: '#section2 > .left',
+    pin: true,
     anticipatePin: 1,
-    pinSpacing: false, // 추가된 부분: pin 요소와 다른 컨텐츠 사이의 간격을 없앰
+    pinSpacing: false,
     markers: true,
 });
 
