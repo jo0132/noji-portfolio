@@ -60,11 +60,11 @@
   
 @font-face {
   font-family: 'ER';
-  src: url('https://github.com/jo0132/noji-portfolio/blob/main/src/assets/fonts/ErosRomanoRegular.eot');
-  src: url('https://github.com/jo0132/noji-portfolio/blob/main/src/assets/fonts/ErosRomanoRegular.eot?#iefix') format('embedded-opentype'),
-      url('https://github.com/jo0132/noji-portfolio/blob/main/src/assets/fonts/ErosRomanoRegular.woff2') format('woff2'),
-      url('https://github.com/jo0132/noji-portfolio/blob/main/src/assets/fonts/ErosRomanoRegular.woff') format('woff'),
-      url('https://github.com/jo0132/noji-portfolio/blob/main/src/assets/fonts/ErosRomanoRegular.svg#ErosRomanoRegular') format('svg');
+  src: url('./assets/fonts/ErosRomanoRegular.eot');
+  src: url('./assets/fonts/ErosRomanoRegular.eot?#iefix') format('embedded-opentype'),
+      url('./assets/fonts/ErosRomanoRegular.woff2') format('woff2'),
+      url('./assets/fonts/ErosRomanoRegular.woff') format('woff'),
+      url('./assets/fonts/ErosRomanoRegular.svg#ErosRomanoRegular') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
