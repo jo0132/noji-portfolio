@@ -58,6 +58,17 @@
     font-display: swap;
 }
   
+@font-face {
+  font-family: 'ER';
+  src: url('./assets/fonts/ErosRomanoRegular.eot');
+  src: url('./assets/fonts/ErosRomanoRegular.eot?#iefix') format('embedded-opentype'),
+      url('./assets/fonts/ErosRomanoRegular.woff2') format('woff2'),
+      url('./assets/fonts/ErosRomanoRegular.woff') format('woff'),
+      url('./assets/fonts/ErosRomanoRegular.svg#ErosRomanoRegular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
 
 
 .GSK {
@@ -70,17 +81,20 @@
 .CN {
   font-family: "ChosunNm";
 }
+.ER {
+  font-family: "ER";
+}
 
 @for $i from 1 through 9 {
     $weight: $i*100;
 
-    .TheJamsil#{$i}{
-        font-family: "TheJamsil";
+    .GSK#{$i}{
+        font-family: "GSK";
         font-weight: $weight;
     }
 
-    .Rebecca#{$i}{
-        font-family: "Rebecca";
-        font-weight: $weight;
-    }
+    // .Rebecca#{$i}{
+    //     font-family: "Rebecca";
+    //     font-weight: $weight;
+    // }
 }
