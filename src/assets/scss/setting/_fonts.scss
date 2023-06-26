@@ -60,11 +60,11 @@
   
 @font-face {
   font-family: 'ER';
-  src: url('../../fonts/ErosRomanoRegular.eot');
-  src: url('../../fonts/ErosRomanoRegular.eot?#iefix') format('embedded-opentype'),
-      url('../../fonts/ErosRomanoRegular.woff2') format('woff2'),
-      url('../../fonts/ErosRomanoRegular.woff') format('woff'),
-      url('../../fonts/ErosRomanoRegular.svg#ErosRomanoRegular') format('svg');
+  src: url('/assets/fonts/ErosRomanoRegular.eot');
+  src: url('/assets/fonts/ErosRomanoRegular.eot?#iefix') format('embedded-opentype'),
+      url('/assets/fonts/ErosRomanoRegular.woff2') format('woff2'),
+      url('/assets/fonts/ErosRomanoRegular.woff') format('woff'),
+      url('/assets/fonts/ErosRomanoRegular.svg#ErosRomanoRegular') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
