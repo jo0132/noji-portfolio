@@ -1,8 +1,13 @@
+let scrollTop = window.pageYOffset;
+
 const spanText = Array.from(document.getElementsByClassName('text'));
 const sectionBg01 = document.getElementById('section01');
 const sectionBg02 = document.getElementById('section02');
 const sectionBg03 = document.getElementById('section03');
 const sectionBg04 = document.getElementById('section04');
+// const sectionBg05 = document.getElementById('section05');
+const sectionBg06 = document.getElementById('section06');
+const sectionBg07 = document.getElementById('section07');
 const ani01 = gsap.timeline();
 
 ani01.to(sectionBg01, {
@@ -162,6 +167,29 @@ ScrollTrigger.create({
     markers: true,
 });
 
+const sectionBg05 = document.getElementById('section05');
+const section = gsap.utils.toArray('#section05 > div');
+
+gsap.to(section, {
+    xPercent: -100 * (section.length - 1),
+    ease: 'none',
+    scrollTrigger: {
+        trigger: horizon,
+        start: 'top top',
+        end: () => '+=' + (horizon.offsetWidth - innerWidth),
+        pin: true,
+        anticipatepin: 1,
+        scrub: 1,
+        // snap: 1 / (section.length -1),
+        snap: {
+            snapTo: 1 / (section.length - 1),
+            inertia: false,
+            duration: { min: 0.1, max: 0.1 },
+        },
+        invalidateOnRefresh: true,
+    },
+});
+
 function scroll() {
     const parallaxCont = document.querySelector('body');
     let scrollTop = window.pageYOffset;
@@ -180,13 +208,13 @@ function scroll() {
 }
 scroll();
 
-//   스무스 효과
-const lenis = new Lenis();
-lenis.on('scroll', e => {
-    console.log(e);
-});
-function raf(time) {
-    lenis.raf(time);
-    requestAnimationFrame(raf);
-}
-requestAnimationFrame(raf);
+// //   스무스 효과
+// const lenis = new Lenis();
+// lenis.on('scroll', e => {
+//     console.log(e);
+// });
+// function raf(time) {
+//     lenis.raf(time);
+//     requestAnimationFrame(raf);
+// }
+// requestAnimationFrame(raf);
