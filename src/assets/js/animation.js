@@ -167,28 +167,28 @@ ScrollTrigger.create({
     markers: true,
 });
 
-const sectionBg05 = document.getElementById('section05');
-const section = gsap.utils.toArray('#section05 > div');
+// const sectionBg05 = document.getElementById('section05');
+// const section = gsap.utils.toArray('#section05 > div');
 
-gsap.to(section, {
-    xPercent: -100 * (section.length - 1),
-    ease: 'none',
-    scrollTrigger: {
-        trigger: horizon,
-        start: 'top top',
-        end: () => '+=' + (horizon.offsetWidth - innerWidth),
-        pin: true,
-        anticipatepin: 1,
-        scrub: 1,
-        // snap: 1 / (section.length -1),
-        snap: {
-            snapTo: 1 / (section.length - 1),
-            inertia: false,
-            duration: { min: 0.1, max: 0.1 },
-        },
-        invalidateOnRefresh: true,
-    },
-});
+// gsap.to(section, {
+//     xPercent: -100 * (section.length - 1),
+//     ease: 'none',
+//     scrollTrigger: {
+//         trigger: horizon,
+//         start: 'top top',
+//         end: () => '+=' + (horizon.offsetWidth - innerWidth),
+//         pin: true,
+//         anticipatepin: 1,
+//         scrub: 1,
+//         // snap: 1 / (section.length -1),
+//         snap: {
+//             snapTo: 1 / (section.length - 1),
+//             inertia: false,
+//             duration: { min: 0.1, max: 0.1 },
+//         },
+//         invalidateOnRefresh: true,
+//     },
+// });
 
 function scroll() {
     const parallaxCont = document.querySelector('body');
