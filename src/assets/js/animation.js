@@ -166,29 +166,39 @@ ScrollTrigger.create({
     toggleClass: 'active',
     markers: true,
 });
+const sectionBg05 = document.getElementById('section05');
+document.addEventListener(sectionBg05, () => {
+    gsap.registerPlugin(ScrollTrigger);
 
-// const sectionBg05 = document.getElementById('section05');
-// const section = gsap.utils.toArray('#section05 > div');
+    function animate(item) {
+        let delay = item.dataset.delay;
+        let x = 0;
+        let y = 0;
+        if (item.classList.contains('BTT')) {
+            x = 0;
+            y = 100;
+        }
 
-// gsap.to(section, {
-//     xPercent: -100 * (section.length - 1),
-//     ease: 'none',
-//     scrollTrigger: {
-//         trigger: horizon,
-//         start: 'top top',
-//         end: () => '+=' + (horizon.offsetWidth - innerWidth),
-//         pin: true,
-//         anticipatepin: 1,
-//         scrub: 1,
-//         // snap: 1 / (section.length -1),
-//         snap: {
-//             snapTo: 1 / (section.length - 1),
-//             inertia: false,
-//             duration: { min: 0.1, max: 0.1 },
-//         },
-//         invalidateOnRefresh: true,
-//     },
-// });
+        gsap.fromTo(
+            item,
+            { autoAlpha: 0, x: x, y: y },
+            { autoAlpha: 1, x: 0, y: 0, delay: delay, duration: 1.25, overwrite: 'auto', ease: 'expo' },
+        );
+    }
+
+    console.log(item);
+    gsap.utils.toArray('.BTT').forEach(item => {
+        ScrollTrigger.create({
+            trigger: item,
+            start: 'top top',
+            markers: true,
+            onEnter: () => {
+                animate(item);
+            },
+        });
+        item.style.opacity = '0';
+    });
+});
 
 function scroll() {
     const parallaxCont = document.querySelector('body');
@@ -208,13 +218,13 @@ function scroll() {
 }
 scroll();
 
-// //   스무스 효과
-// const lenis = new Lenis();
-// lenis.on('scroll', e => {
-//     console.log(e);
-// });
-// function raf(time) {
-//     lenis.raf(time);
-//     requestAnimationFrame(raf);
-// }
-// requestAnimationFrame(raf);
+//   스무스 효과
+const lenis = new Lenis();
+lenis.on('scroll', e => {
+    console.log(e);
+});
+function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+}
+requestAnimationFrame(raf);

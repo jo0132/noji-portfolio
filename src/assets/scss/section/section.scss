@@ -364,6 +364,45 @@
     }
 }
 
+@media (max-width:900px) {
+    #section05 {
+
+        > div {
+
+            >div {
+                img {
+                    margin-bottom: 10px;
+                }
+            }
+            h1 {
+                margin-bottom: 6px;
+            }
+            p {
+                width: 293px;
+                font-size: 15px;
+                margin-bottom: 6px;
+
+            }
+            .view_button {
+
+                div {
+
+                    a {
+                        font-size: 12px; 
+                    }
+                    // span {
+                    //     display: none;
+                    //     img {
+                    //         display: none;
+                    //     }
+                    // }
+                }
+    
+            }
+        }
+
+    }
+}
 @media (max-width:1500px) {
     #section05 {
 
