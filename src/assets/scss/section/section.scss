@@ -338,7 +338,7 @@
         // background-color: #999;
         .section06_main {
             width: 60.5%;
-            height: 649px;
+            height: 34vw;
             // background-color: #ddd;
             text-align: center;
             > h1 {
@@ -366,13 +366,14 @@
         padding: 112px 60px;
         color: #fff;
         h1 {
-            font-size: 180px;
+            font-size: 9vw;
             text-align: right;
+            line-height: 0.7;
         }
         .row_desc {
             
             .view_button {
-                font-size: 20px; 
+                font-size: 1vw; 
                 display: flex;
                 align-items: flex-end;
                 text-align: right;
@@ -396,7 +397,7 @@
                 }
             }
             p {
-                font-size: 22px;
+                font-size: 1.1vw;
                 width: 25%;
             }
         }
@@ -408,6 +409,7 @@
         // background-color: #222;
         background-image: url(../assets/images/section06-1.png);
         background-repeat: no-repeat;
+        background-position: center center;
         object-fit: cover;
     }
     .section06-02 {
@@ -432,6 +434,7 @@
         // background-color: #555;
         background-image: url(../assets/images/section06-4.png);
         background-repeat: no-repeat;
+        background-position: center center;
         object-fit: cover;
     }
     .section06-05 {
@@ -440,7 +443,32 @@
         // background-color: #666;
         background-image: url(../assets/images/section06-5.png);
         background-repeat: no-repeat;
+        background-position: center center;
         object-fit: cover;
+    }
+}
+@media (max-width:1250px){
+    #section06 {
+        > div:not(:first-child) {
+            
+            h1 {
+                font-size: 110px;
+                
+            }
+            .row_desc {
+                
+                .view_button {
+                    font-size: 15px; 
+                    
+                    
+                }
+                p {
+                    font-size: 16px;
+                    
+                }
+            }
+    
+        }
     }
 }
 @media (max-width:1000px){
@@ -451,6 +479,20 @@
                     font-size: 16px;
                 }
             }
+        }
+    }
+}
+@media (max-width:900px){
+    #section06 {
+        > div:not(:first-child) {
+            .row_desc {
+                
+                p {
+                    width: 70%;
+                    
+                }
+            }
+    
         }
     }
 }
