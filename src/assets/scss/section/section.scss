@@ -1,5 +1,9 @@
+// body {
+//     overflow-x: hidden;
+//   }
 .parallax__info {
     position: fixed;
+    z-index: 99;
     right: 20px;
     top: 20px;
     background-color: rgba(0, 0, 0, 0.6);
@@ -16,11 +20,12 @@
     // background-color: #000;
     overflow: hidden;
     display: flex;
-    align-items: center;
+    // align-items: center;
     position: relative;
+    z-index: 999;
     .text_wrap {
         text-align: center;
-        margin: 2vw 5vw ;
+        margin: 2vw 5vw;
 
         > span {
             display: inline-block;
@@ -37,7 +42,7 @@
     .img_wrap {
         position: absolute;
         left: 20vw;
-        top: auto;
+        top: 23vh;
         // margin: 13vw 20vw;
         width: 50vw;
         height: 30vw;
@@ -209,6 +214,7 @@
             margin-left: 20px;
             margin-bottom: -40px;
             font-size: 1rem;
+
         }
         .smail {
             position: absolute;
@@ -226,7 +232,6 @@
             object-fit: cover;
             left: -3.6vw;
             top: -2.8vw;
-            
         }
     }
 
@@ -482,11 +487,15 @@
 
 #section06 {
     display: flex;
-    width: 600vw;
+    width: 600vw; 
     height: 100vh;
-    .section06-00 {
+    overflow-x: hidden; /* 가로 스크롤 숨김 */
+    > div {
         width: 100vw;
         height: 100vh;
+        z-index: 100;
+    }
+    .section06-00 {
         justify-content: center;
         overflow: hidden;
         display: flex;
@@ -527,7 +536,8 @@
             line-height: 0.7;
         }
         .row_desc {
-            
+            position: absolute;
+            bottom: 112px;
             .view_button {
                 font-size: 1vw; 
                 display: flex;
@@ -560,48 +570,43 @@
 
     }
     .section06-01 {
-        width: 100vw;
-        height: 100vh;
         // background-color: #222;
         background-image: url(../assets/images/section06-1-min.png);
         background-repeat: no-repeat;
         background-position: center center;
         object-fit: cover;
+        overflow: hidden;
     }
     .section06-02 {
-        width: 100vw;
-        height: 100vh;
         // background-color: #333;
         background-image: url(../assets/images/section06-2-min.png);
         background-repeat: no-repeat;
         background-position: 20% center;
         object-fit: cover;
+        overflow: hidden;
     }
     .section06-03 {
-        width: 100vw;
-        height: 100vh;
         // background-color: #444;
         background-image: url(../assets/images/section06-3-min.png);
         background-repeat: no-repeat;
         object-fit: cover;
+        overflow: hidden;
     }
     .section06-04 {
-        width: 100vw;
-        height: 100vh;
         // background-color: #555;
         background-image: url(../assets/images/section06-4-min.png);
         background-repeat: no-repeat;
         background-position: center center;
         object-fit: cover;
+        overflow: hidden;
     }
     .section06-05 {
-        width: 100vw;
-        height: 100vh;
         // background-color: #666;
         background-image: url(../assets/images/section06-5-min.png);
         background-repeat: no-repeat;
         background-position: center center;
         object-fit: cover;
+        overflow: hidden;
     }
 }
 @media (max-width:1250px){
@@ -820,6 +825,12 @@
         }
     }
 }
+
+
+
+
+
+
 
 
 
