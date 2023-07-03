@@ -70,6 +70,7 @@ const ani01 = gsap.timeline({
         });
     },
 });
+
 gsap.set(sectionBg01, {
     position: 'fixed',
     zIndex: 999999,
@@ -124,8 +125,8 @@ ani01
 //section01
 const ani02 = gsap.timeline();
 ani02.from('#section02 .right', { opacity: 1, y: 0 }).to('#section02 .right', { opacity: 0, y: -200 });
-ani02.from('#section02 .left', { opacity: 1 }, '<').to('#section02 .left', { opacity: 0 }, '<');
-ani02.to(sectionBg02, { display: 'none', opacity: 0 }, '<');
+ani02.from('#section02 .left', { delay: 0.3, opacity: 1 }, '<').to('#section02 .left', { opacity: 0 }, '<');
+ani02.to(sectionBg02, { opacity: 0 });
 
 ScrollTrigger.create({
     animation: ani02,
@@ -137,6 +138,7 @@ ScrollTrigger.create({
     anticipatePin: 1,
     markers: false,
 });
+
 //section01
 
 const ani03 = gsap.timeline();
@@ -165,17 +167,12 @@ const ani04 = gsap.timeline();
 const titleSpan = document.querySelectorAll('.title_span');
 
 ani04
-    .from(sectionBg04, { opacity: 0 }) // 시작 상태 정의
-    .to('.s4_t1', { duration: 0.1, y: '-33.5vw' })
-    .to('.s4_t2', { duration: 0.1, y: '-33.5vw' })
-    .to('.s4_t3', { duration: 0.1, y: '-33.5vw' })
-
+    .from(sectionBg04, { opacity: 0 })
+    .to('.s4_t1', { duration: 0.6, y: '-33.5vw' })
     .from(titleSpan, { opacity: 0 }, '<')
-    .to('.s4_t4', { duration: 0.1, y: '-33.5vw' })
-    .to('.s4_t5', { duration: 0.1, y: '-33.5vw' })
+    .to('.s4_t2', { duration: 0.6, y: '-33.5vw' })
+    .to('.s4_t3', { duration: 0.6, y: '-33.5vw' })
     .to(titleSpan, { opacity: 1, marginRight: 0 }, '<')
-    .to('.s4_t6', { duration: 0.1, y: '-33.5vw' })
-    .to('.s4_t7', { duration: 0.1, y: '-33.5vw' })
     .to('.section04_main_title', { scale: 10 })
     .to(sectionBg04, { backgroundColor: '#000' }, '<')
     .to('#section04 > div', { display: 'none', opacity: 0 }, '<');
