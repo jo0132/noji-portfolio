@@ -13,7 +13,14 @@ const sectionBg07 = document.getElementById('section07');
 
 const ani01 = gsap.timeline({
     onComplete: function () {
-        const ani01_end = gsap.timeline();
+        const ani01_end = gsap.timeline({
+            onComplete: function () {
+                gsap.to(sectionBg01, {
+                    display: 'none',
+                    opacity: 0,
+                });
+            },
+        });
         gsap.set(sectionBg01, {
             position: 'static',
             zIndex: 999999,
@@ -49,8 +56,7 @@ const ani01 = gsap.timeline({
             })
             .to(sectionBg02, {
                 opacity: 1,
-            })
-            .to(sectionBg01, { display: 'none' });
+            });
 
         ScrollTrigger.create({
             animation: ani01_end,
@@ -119,6 +125,7 @@ ani01
 const ani02 = gsap.timeline();
 ani02.from('#section02 .right', { opacity: 1, y: 0 }).to('#section02 .right', { opacity: 0, y: -200 });
 ani02.from('#section02 .left', { opacity: 1 }, '<').to('#section02 .left', { opacity: 0 }, '<');
+ani02.to(sectionBg02, { display: 'none', opacity: 0 }, '<');
 
 ScrollTrigger.create({
     animation: ani02,
@@ -130,16 +137,7 @@ ScrollTrigger.create({
     anticipatePin: 1,
     markers: false,
 });
-
-// const panel03 = document.querySelector('#section03');
-
-// ScrollTrigger.create({
-//     trigger: panel03,
-//     start: 'top top',
-//     end: '+=3000',
-//     pin: true,
-//     pinSpacing: false,
-// });
+//section01
 
 const ani03 = gsap.timeline();
 
@@ -160,7 +158,7 @@ ScrollTrigger.create({
     anticipatePin: 1,
     markers: false,
 });
-// 세션3
+// section03
 
 const ani04 = gsap.timeline();
 
@@ -168,14 +166,19 @@ const titleSpan = document.querySelectorAll('.title_span');
 
 ani04
     .from(sectionBg04, { opacity: 0 }) // 시작 상태 정의
-    .to('.s4_t1', { y: '-33.5vw' })
+    .to('.s4_t1', { duration: 0.1, y: '-33.5vw' })
+    .to('.s4_t2', { duration: 0.1, y: '-33.5vw' })
+    .to('.s4_t3', { duration: 0.1, y: '-33.5vw' })
+
     .from(titleSpan, { opacity: 0 }, '<')
-    .to('.s4_t2', { y: '-33.5vw' })
+    .to('.s4_t4', { duration: 0.1, y: '-33.5vw' })
+    .to('.s4_t5', { duration: 0.1, y: '-33.5vw' })
     .to(titleSpan, { opacity: 1, marginRight: 0 }, '<')
-    .to('.s4_t3', { y: '-33.5vw' })
+    .to('.s4_t6', { duration: 0.1, y: '-33.5vw' })
+    .to('.s4_t7', { duration: 0.1, y: '-33.5vw' })
     .to('.section04_main_title', { scale: 10 })
     .to(sectionBg04, { backgroundColor: '#000' }, '<')
-    .to('#section04 > div', { display: 'none' }, '<');
+    .to('#section04 > div', { display: 'none', opacity: 0 }, '<');
 
 ScrollTrigger.create({
     animation: ani04,
@@ -190,7 +193,7 @@ ScrollTrigger.create({
     },
 });
 
-//세션4
+//section04
 
 document.addEventListener('DOMContentLoaded', () => {
     gsap.registerPlugin(ScrollTrigger);
@@ -243,7 +246,8 @@ document.addEventListener('DOMContentLoaded', () => {
         item.style.opacity = '0';
     });
 });
-// 세션5
+
+// section05
 
 const sectionBg06 = document.getElementById('section06');
 const sectionItem = gsap.utils.toArray('#section06 > div');
@@ -367,6 +371,8 @@ gsap.timeline({
     },
 });
 
+// section06
+
 const ani07 = gsap.timeline();
 
 ani07
@@ -385,6 +391,7 @@ ScrollTrigger.create({
     anticipatePin: 1,
     markers: false,
 });
+// section07
 
 function scroll() {
     const parallaxCont = document.querySelector('body');
@@ -398,6 +405,14 @@ function scroll() {
     let goLeft = scrollTop * (viewWidth / viewHeight);
 
     gsap.to(parallaxCont, { left: -goLeft, ease: 'power2.out' });
+
+    document.querySelectorAll('.parallax__item').forEach(item => {
+        const target1 = item.querySelectorAll('.section05_img_item');
+
+        let offset1 = (scrollTop - item.offsetTop) * 0.2;
+
+        gsap.to(target1, { duration: 0.3, y: offset1, ease: 'expo.out' });
+    });
 
     document.querySelector('.scroll span').innerHTML = Math.round(scrollTop);
     requestAnimationFrame(scroll);
