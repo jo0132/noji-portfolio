@@ -1,11 +1,8 @@
 let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
 const sectionBg01 = document.getElementById('section01');
-// const sectionBg02 = document.getElementById('section02');    // 변경됨
 const sectionBg03 = document.getElementById('section03');
 const sectionBg04 = document.getElementById('section04');
-// const sectionBg05 = document.getElementById('section05');
-// const sectionBg06 = document.getElementById('section06');
 const sectionBg07 = document.getElementById('section07');
 
 setTimeout(() => {
