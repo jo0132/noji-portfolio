@@ -47,14 +47,14 @@
     font-display: swap;
   }
   @font-face {
-    font-family: 'ChosunNm';
+    font-family: 'IropkeBatang';
     font-weight: normal;
     font-style: normal;
-    src: url('https://cdn.jsdelivr.net/gh/webfontworld/ChosunNm/ChosunNm.eot');
-    src: url('https://cdn.jsdelivr.net/gh/webfontworld/ChosunNm/ChosunNm.eot?#iefix') format('embedded-opentype'),
-         url('https://cdn.jsdelivr.net/gh/webfontworld/ChosunNm/ChosunNm.woff2') format('woff2'),
-         url('https://cdn.jsdelivr.net/gh/webfontworld/ChosunNm/ChosunNm.woff') format('woff'),
-         url('https://cdn.jsdelivr.net/gh/webfontworld/ChosunNm/ChosunNm.ttf') format("truetype");
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/iropke/IropkeBatang.eot');
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/iropke/IropkeBatang.eot?#iefix') format('embedded-opentype'),
+         url('https://cdn.jsdelivr.net/gh/webfontworld/iropke/IropkeBatang.woff2') format('woff2'),
+         url('https://cdn.jsdelivr.net/gh/webfontworld/iropke/IropkeBatang.woff') format('woff'),
+         url('https://cdn.jsdelivr.net/gh/webfontworld/iropke/IropkeBatang.ttf') format("truetype");
     font-display: swap;
 }
   
@@ -78,8 +78,8 @@
 .GFO {
     font-family: "Grandiflora One";
 }
-.CN {
-  font-family: "ChosunNm";
+.IB {
+  font-family: "IropkeBatang";
 }
 .ER {
   font-family: "ER";

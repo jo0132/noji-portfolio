@@ -1,136 +1,77 @@
 let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-const spanText = Array.from(document.getElementsByClassName('text'));
-const tlImg = Array.from(document.getElementsByClassName('tl_img'));
-const tlSpan = Array.from(document.getElementsByClassName('tl_span'));
 const sectionBg01 = document.getElementById('section01');
-const sectionBg02 = document.getElementById('section02');
+// const sectionBg02 = document.getElementById('section02');    // 변경됨
 const sectionBg03 = document.getElementById('section03');
 const sectionBg04 = document.getElementById('section04');
 // const sectionBg05 = document.getElementById('section05');
 // const sectionBg06 = document.getElementById('section06');
 const sectionBg07 = document.getElementById('section07');
 
-const ani01 = gsap.timeline({
-    onComplete: function () {
-        const ani01_end = gsap.timeline({
-            onComplete: function () {
-                gsap.to(sectionBg01, {
-                    display: 'none',
-                    opacity: 0,
-                });
+setTimeout(() => {
+    const ani = gsap.timeline();
+    ani.from(
+        '#section1 .text-wrap span',
+        {
+            autoAlpha: 0,
+            y: -250,
+            rotation: 360,
+            ease: 'back.out(4)',
+            duration: 4,
+            stagger: {
+                amount: 3,
+                from: 'random',
             },
-        });
-        gsap.set(sectionBg01, {
-            position: 'static',
-            zIndex: 999999,
-        });
-        ani01_end
-            .to(spanText, {
-                duration: 2,
-                translateY: 1500,
-                rotate: 50,
-                stagger: {
-                    amount: 3,
-                    from: 'random',
-                },
-            })
-            .to(tlImg, {
-                duration: 2,
-                translateY: 3000,
-                rotate: 50,
-                stagger: {
-                    amount: 3,
-                    from: 'random',
-                },
-            })
-            .to(sectionBg02, { opacity: 1 })
-            .to(tlSpan, {
-                duration: 2,
-                translateY: 3000,
-                rotate: 50,
-                stagger: {
-                    amount: 3,
-                    from: 'random',
-                },
-            })
-            .to(sectionBg02, {
-                opacity: 1,
-            });
+        },
+        '<',
+    ).to('#section1 .bg-wrap .bg', { backgroundColor: '#000' }, '-=4', '<');
 
-        ScrollTrigger.create({
-            animation: ani01_end,
-            trigger: sectionBg01,
-            start: 'top top',
-            end: '+=3000',
-            scrub: true,
-            pin: true,
-            pinSpacing: false,
-            markers: false,
-        });
-    },
-});
+    ani.from('.title-wrap .t1', { autoAlpha: 0, x: -100, duration: 0.5 });
+    ani.from('.title-wrap .t2', { autoAlpha: 0, x: 100, duration: 0.5 });
+    ani.from('.title-wrap .t3', { autoAlpha: 0, x: -100, duration: 0.5 });
+}, 2000);
 
-gsap.set(sectionBg01, {
-    position: 'fixed',
-    zIndex: 999999,
-});
-ani01.to(sectionBg02, {
-    opacity: 0,
-});
-ani01.from(spanText, {
-    autoAlpha: 0,
-    y: -100,
-    rotation: 360,
-    ease: 'back.out(4)',
-    duration: 1,
-    stagger: {
-        amount: 3,
-        from: 'random',
-    },
-});
-gsap.to(sectionBg01, {
-    delay: 0.3,
-    duration: 0.5,
-    backgroundColor: '#000',
-});
-ani01
-    .to(sectionBg02, { opacity: 0 })
-    .to('.img_wrap .i1', {
-        display: 'block',
-        translateX: 0,
-    })
-    .to('.img_wrap .i2', {
-        display: 'block',
-        translateX: 0,
-    })
-    .to('.img_wrap .i3', {
-        display: 'block',
-        translateX: 0,
-    })
-    .to('.img_wrap .i1 img', {
-        display: 'block',
-        scale: 0.9,
-    })
-    .to('.img_wrap .i2 img', {
-        display: 'block',
-        scale: 0.9,
-    })
+const ani1 = gsap.timeline();
+ani1.to('#section1 .bg-wrap .bg', { opacity: 0 }, '-=2')
+    .to('#section1 .t1', { duration: 3, xPercent: 250, ease: 'expo.out' }, 'text')
+    .to('#section1 .t2', { duration: 3, xPercent: -250, ease: 'expo.out' }, 'text')
+    .to('#section1 .t3', { duration: 3, xPercent: 250, ease: 'expo.out' }, 'text')
+    .to(
+        '#section1 .text-wrap span',
+        {
+            rotate: 2160,
+            yPercent: 1500,
+            ease: Bounce.easeOut,
+            duration: 3,
+            stagger: {
+                amount: 3,
+                from: 'random',
+            },
+        },
+        '-=1',
+    );
 
-    .to('.img_wrap .i3 img', {
-        display: 'block',
-        scale: 0.9,
-    });
+ScrollTrigger.create({
+    animation: ani1,
+    trigger: '#section1',
+    start: 'top top',
+    end: '+=8000',
+    scrub: true,
+    pin: true,
+    anticipatePin: 1,
+    markers: true,
+});
 
 //section01
 const ani02 = gsap.timeline();
-ani02.from('#section02 .right', { opacity: 1, y: 0 }).to('#section02 .right', { opacity: 0, y: -200 });
-ani02.from('#section02 .left', { delay: 0.3, opacity: 1 }, '<').to('#section02 .left', { opacity: 0 }, '<');
-ani02.to(sectionBg02, { opacity: 0 });
+ani02.to('.section02', { opacity: 1, y: 0 }, '+=.7');
+ani02.from('.section02 .right', { opacity: 1, y: 0 }).to('.section02 .right', { opacity: 0, y: -200 });
+ani02.from('.section02 .left', { delay: 0.3, opacity: 1 }, '<').to('.section02 .left', { opacity: 0 }, '<');
+ani02.to('.section02', { opacity: 0 });
 
 ScrollTrigger.create({
     animation: ani02,
-    trigger: sectionBg02,
+    trigger: '.section02',
     start: 'top top',
     end: '+=11000',
     scrub: true,
@@ -373,10 +314,9 @@ gsap.timeline({
 const ani07 = gsap.timeline();
 
 ani07
-    .set('.section07_img', { opacity: 0 })
-    .set('.section07_inner > h2', { duration: 1, opacity: 0, x: 400 })
-    .to('.section07_img', { duration: 1, opacity: 1 })
-    .to('.section07_inner > h2', { duration: 1, opacity: 1, x: 0 });
+
+    .set('.section07_inner > h2', { duration: 1, opacity: 0 })
+    .to('.section07_inner > h2', { duration: 1, opacity: 1 });
 
 ScrollTrigger.create({
     animation: ani07,
