@@ -1,6 +1,6 @@
-body {
-    overflow-x: hidden;
-  }
+// body {
+//     overflow-x: hidden;
+//   }
 .parallax__info {
     position: fixed;
     z-index: 99;
@@ -35,39 +35,7 @@ body {
 			z-index: 10;
 			opacity: 1;
 		}
-		.section02 {
-			width: 100%;
-			height: 100%;
-			display: flex;
-			justify-content: center;
-			position: relative;
-			z-index: 9;
-			.left {
-				width: 50%;
-				background-image: url(../assets/images/profile_02-min.png);
-				background-size: 90%;
-				background-repeat: no-repeat;
-				background-position: right bottom;
-			}
-			.right {
-				width: 50%;
-				display: flex;
-				align-items: flex-start;
-				justify-content: center;
-				flex-direction: column;
-				padding-left: 4%;
-				> img {
-					width: 50%;
-					margin-bottom: 30px;
-				}
-				> p {
-					width: 100%;
-					font-family: 'IropkeBatang';
-					white-space: pre-line;
-					line-height: 1.5;
-				}
-			}
-		}
+
 	}
 	.text-wrap {
 		position: relative;
@@ -94,7 +62,7 @@ body {
     text-align: center;
     width: 17vw;
     height: 17vw;
-	font-size: 4vw;
+	font-size: 3.2vw;
 	line-height: 1;
 	// border-radius: 100px;
 	// padding: 1vw 4vw 2.3vw 4vw;
@@ -114,6 +82,7 @@ body {
 	> div {
 		font-size: 5vw;
 		font-family: 'GmarketSans';
+        font-weight: 700;
 		text-transform: uppercase;
 		background-color: #ccc;
 		display: inline-block;
@@ -158,11 +127,15 @@ body {
             transform: scale(1.2);
         }
 	}
+    
 }
 
 @media (max-width:1400px) {
+
     .text-wrap > span {
-        font-size: 8vw;
+        width: 20vw;
+        height: 20vw;
+        font-size: 4vw;
     }
     .title-wrap {
 
@@ -173,8 +146,16 @@ body {
     }
 }
 @media (max-width:900px) {
+    #section1 {
+        .text-wrap {
+            left: 0;
+            // left: -250px;
+        }
+    }
     .text-wrap > span {
-    font-size: 12vw;
+        width: 22vw;
+        height: 22vw;
+        font-size: 5vw;
     }
     .title-wrap {
 
@@ -187,6 +168,67 @@ body {
 
 //section01
 
+.section02 {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: 9;
+    .left {
+        width: 50%;
+        background-image: url(../assets/images/profile_02-min.png);
+        background-size: 90%;
+        background-repeat: no-repeat;
+        background-position: right bottom;
+    }
+    .right {
+        width: 50%;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        flex-direction: column;
+        padding-left: 4%;
+        > img {
+            width: 50%;
+            margin-bottom: 30px;
+        }
+        > p {
+            width: 100%;
+            font-family: 'IropkeBatang';
+            white-space: pre-line;
+            line-height: 1.5;
+        }
+    }
+}
+@media (max-width:1800px) {
+    .section02 {
+        .left {
+            background-size: cover;
+            
+        }
+        .right {
+            margin-right: 40px;
+        }
+    }
+}
+@media (max-width:1100px) {
+    .section02 {
+        flex-direction: column;
+        .left {
+            background-size: 90%;
+            background-position: center center;
+            width: 100%;
+            height: 50vh;
+        }
+        .right {
+            width: 100%;
+            > img {
+                display: none;
+            }
+        }
+    }
+}
 // #section02 {
 //     width: 100%;
 //     height: 100vh;
@@ -380,10 +422,7 @@ body {
             > img {
                 display: inline-block;
                 // margin-bottom: 15px;
-                &:hover {
-                    transform: scale(1.05);
-                    transition: .3s ease-in-out;
-                }
+
             }
         }
         h1 {

@@ -5,6 +5,7 @@ const sectionBg03 = document.getElementById('section03');
 const sectionBg04 = document.getElementById('section04');
 const sectionBg07 = document.getElementById('section07');
 
+gsap.set(sectionBg01, { position: 'fixed' });
 setTimeout(() => {
     const ani = gsap.timeline();
     ani.from(
@@ -119,7 +120,7 @@ ScrollTrigger.create({
     animation: ani04,
     trigger: sectionBg04,
     start: 'top top',
-    end: '+=200%', // 고정된 상태를 유지할 스크롤 범위를 설정합니다.
+    end: '+=10000', // 고정된 상태를 유지할 스크롤 범위를 설정합니다.
     pin: true, // 요소를 고정시킵니다.
     markers: false,
     onEnter: () => {
