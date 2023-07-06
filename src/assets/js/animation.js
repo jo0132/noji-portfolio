@@ -65,7 +65,7 @@ const ani02 = gsap.timeline();
 ani02.to('.section02', { opacity: 1, y: 0 }, '+=.7');
 ani02.from('.section02 .right', { opacity: 1, y: 0 }).to('.section02 .right', { opacity: 0, y: -200 });
 ani02.from('.section02 .left', { delay: 0.3, opacity: 1 }, '<').to('.section02 .left', { opacity: 0 }, '<');
-ani02.to('.section02', { opacity: 0 });
+ani02.to('.section02', { opacity: 0 }, '-=1');
 
 ScrollTrigger.create({
     animation: ani02,
@@ -83,7 +83,7 @@ ScrollTrigger.create({
 const ani03 = gsap.timeline();
 
 ani03
-    .from('.section03_main_desc', { opacity: 1, y: 0 })
+    .from('.section03_main_desc', { opacity: 1, y: 0 }, '<')
     .from('.section03_main_item', { opacity: 1 }, '<')
     .to('.section03_main_item', { duration: 3, opacity: 0 }, '<')
     .to('.section03_main_desc', { duration: 3, opacity: 0, y: -500 }, '<')
@@ -349,7 +349,7 @@ function scroll() {
         gsap.to(target1, { duration: 0.3, y: offset1, ease: 'expo.out' });
     });
 
-    document.querySelector('.scroll span').innerHTML = Math.round(scrollTop);
+    // document.querySelector('.scroll span').innerHTML = Math.round(scrollTop);
     requestAnimationFrame(scroll);
 }
 scroll();
