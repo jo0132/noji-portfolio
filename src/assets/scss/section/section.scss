@@ -1,6 +1,6 @@
-body {
-    overflow-x: hidden;
-  }
+// body {
+//     overflow-x: hidden;
+//   }
 .parallax__info {
     position: fixed;
     z-index: 99;
@@ -286,75 +286,42 @@ body {
     }
 }
 @media (max-width:1000px) {
-    #section03 {
 
-    
-        > div {
 
-            .section03_main_img {
-                object-fit: cover;
-                width: 203px;
-                height: 320px;
-            }
-            p {
-                // width: 407p
-                padding: 3px;
-                background-color: #ffffffc4;
-                margin-left: -7vw;
-    
-            }
-            .smail {
-                display: none;
-            }
-            .small_sign {
-                display: none;
-            }
-        }
-    }
 }
 
 @media (max-width:700px) {
     #section03 {
-
+        padding: 0 6vw 0 18vw;
     
         > div {
-            background-color: #fff;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-wrap: nowrap;
             align-items: center;
-            position: relative;
+            background-color: #fff;
+            width: 90%;
+            height: 60%;
             .section03_main_img {
                 object-fit: cover;
-
+                width: 100%;
+                height: 70%;
             }
             p {
-                position: absolute;
                 display: inline-block;
-                width: 90%;
-                height: 146px;
-                margin-left: 20px;
-                margin-bottom: -40px;
-                font-size: 1rem;
+                width: 100%;
+                height: 50%;
+                background-color: #ffffffab;
+                margin-left: -40px;
+                margin-bottom: -80px;
+                z-index: 0;
     
             }
             .smail {
-                position: absolute;
-                width: 3.3vw;
-                height: 3.3vw;
-                margin: 5px;
-                object-fit: cover;
-                left: 0;
-                bottom: 0;
+display: none;
             }
             .small_sign {
-                position: absolute;
-                width: 8vw;
-                height: 5.5vw;
-                object-fit: cover;
-                left: -3.6vw;
-                top: -2.8vw;
+// display: none;
+top: 8vw;
+width: 76px;
+height: 52px;
             }
         }
     }
@@ -452,16 +419,13 @@ body {
                     > img {
                         width: 14px;
                         height: 14px;
-                        &:hover {
-                            fill:#9e6345
-                        }
                     }
-                }   
+                }
                 &:hover {
-                border-bottom: 1px solid #9e6345;
+                border-bottom: 1px solid #ffac82;
                 }
                 & > a:hover {
-                    color:#9e6345
+                    color:#ffac82
                 }
                 
             }

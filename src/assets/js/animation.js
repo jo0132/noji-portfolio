@@ -83,6 +83,7 @@ ScrollTrigger.create({
 const ani03 = gsap.timeline();
 
 ani03
+
     .from('.section03_main_desc', { opacity: 1, y: 0 }, '<')
     .from('.section03_main_item', { opacity: 1 }, '<')
     .to('.section03_main_item', { duration: 3, opacity: 0 }, '<')
