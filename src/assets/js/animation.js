@@ -57,21 +57,20 @@ ScrollTrigger.create({
     scrub: true,
     pin: true,
     anticipatePin: 1,
-    markers: true,
+    markers: false,
 });
 
 //section01
 const ani02 = gsap.timeline();
-ani02.to('.section02', { opacity: 1, y: 0 }, '+=.7');
-ani02.from('.section02 .right', { opacity: 1, y: 0 }).to('.section02 .right', { opacity: 0, y: -200 });
+ani02.from('.section02 .right', { opacity: 1, y: 0 }, '+=3').to('.section02 .right', { opacity: 0, y: -200 }, '<');
 ani02.from('.section02 .left', { delay: 0.3, opacity: 1 }, '<').to('.section02 .left', { opacity: 0 }, '<');
-ani02.to('.section02', { opacity: 0 }, '-=1');
+ani02.to('#section1', { opacity: 0 });
 
 ScrollTrigger.create({
     animation: ani02,
     trigger: '.section02',
     start: 'top top',
-    end: '+=11000',
+    end: '+=10000',
     scrub: true,
     pin: true,
     anticipatePin: 1,
@@ -83,8 +82,7 @@ ScrollTrigger.create({
 const ani03 = gsap.timeline();
 
 ani03
-
-    .from('.section03_main_desc', { opacity: 1, y: 0 }, '<')
+    .from('.section03_main_desc', { opacity: 1, y: 0 })
     .from('.section03_main_item', { opacity: 1 }, '<')
     .to('.section03_main_item', { duration: 3, opacity: 0 }, '<')
     .to('.section03_main_desc', { duration: 3, opacity: 0, y: -500 }, '<')
@@ -206,7 +204,7 @@ let scrollTween = gsap.to(sectionItem, {
             duration: { min: 0.1, max: 0.1 },
         },
         invalidateOnRefresh: true,
-        markers: true,
+        markers: false,
     },
 });
 gsap.timeline({
@@ -216,7 +214,7 @@ gsap.timeline({
         end: 'right center',
         toggleActions: 'play none none reverse',
 
-        markers: true,
+        markers: false,
         onEnter: () => {
             // .section06-00 트리거에 도착했을 때 실행할 애니메이션 코드
             gsap.set('.section06-00 > .section06_main > img', { width: 0 });
@@ -234,7 +232,7 @@ gsap.timeline({
         start: 'left center',
         end: 'right center',
         toggleActions: 'play none none reverse',
-        markers: true,
+        markers: false,
 
         onEnter: () => {
             // .section06-01 트리거에 도착했을 때 실행할 애니메이션 코드
