@@ -2,7 +2,7 @@ let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
 const sectionBg01 = document.getElementById('section01');
 const sectionBg03 = document.getElementById('section03');
-const sectionBg07 = document.getElementById('section07');
+const sectionBg05 = document.getElementById('section05');
 
 gsap.set(sectionBg01, { position: 'fixed' });
 setTimeout(() => {
@@ -286,16 +286,16 @@ gsap.timeline({
 
 // section04
 
-const ani07 = gsap.timeline();
+const ani05 = gsap.timeline();
 
-ani07
+ani05
 
-    .set('.section07_inner > h2', { duration: 1, opacity: 0 })
-    .to('.section07_inner > h2', { duration: 1, opacity: 1 });
+    .set('.section05_inner > h2', { duration: 1, opacity: 0 })
+    .to('.section05_inner > h2', { duration: 1, opacity: 1 });
 
 ScrollTrigger.create({
-    animation: ani07,
-    trigger: sectionBg07,
+    animation: ani05,
+    trigger: sectionBg05,
     start: 'top top',
     end: '+=5000',
     scrub: true,
@@ -303,7 +303,8 @@ ScrollTrigger.create({
     anticipatePin: 1,
     markers: false,
 });
-// section07
+
+// section05
 
 function scroll() {
     const parallaxCont = document.querySelector('body');
