@@ -105,16 +105,10 @@
     text-transform: uppercase;
     background-color: #ccc;
     display: inline-block;
-    padding: 1vw 5vw;
+    padding: 1vw 5vw 0.5vw 5vw;
     border-radius: 10vw;
     color: #fff;
     margin: 10px;
-}
-.title-wrap .img {
-    width: 9vw;
-    position: absolute;
-    left: -9vw;
-    top: 0;
 }
 .title-wrap .t1 {
     background-color: #0044F3;
@@ -235,6 +229,11 @@
     display: inline-block;
     border-radius: 50px;
     margin-top: 10px;
+}
+.site-wrap .btn a:hover {
+    background: #F8E4D9;
+    color: #000;
+
 }
 
 
