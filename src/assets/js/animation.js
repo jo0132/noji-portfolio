@@ -332,7 +332,7 @@ function scroll() {
 scroll();
 
 //   스무스 효과
-const lenis = new Lenis();
+const lenis = new lenis();
 lenis.on('scroll', e => {
     console.log(e);
 });
