@@ -2,7 +2,6 @@ let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
 const sectionBg01 = document.getElementById('section01');
 const sectionBg03 = document.getElementById('section03');
-const sectionBg04 = document.getElementById('section04');
 const sectionBg07 = document.getElementById('section07');
 
 gsap.set(sectionBg01, { position: 'fixed' });
@@ -29,7 +28,7 @@ const ani1 = gsap.timeline();
 ani1.to('#section1 .t1', { duration: 3, xPercent: 250, ease: 'expo.out' }, 'text')
     .to('#section1 .t2', { duration: 3, xPercent: -250, ease: 'expo.out' }, 'text')
     .to('#section1 .t3', { duration: 3, xPercent: 250, ease: 'expo.out' }, 'text')
-    .to('#section1 .text-wrap span', { yPercent: 1000, stagger: { amount: 3, from: 'random' } }, '-=1')
+    .to('#section1 .text-wrap span', { yPercent: 3000, stagger: { amount: 3, from: 'random' } }, '-=1')
     .to('#section1 .bg-wrap .bg', { autoAlpha: 0, duration: 2 }, '-=2');
 
 ScrollTrigger.create({
@@ -163,16 +162,16 @@ gsap.from('.end_title span', {
 
 // section03
 
-const sectionBg06 = document.getElementById('section06');
-const sectionItem = gsap.utils.toArray('#section06 > div');
+const sectionBg04 = document.getElementById('section04');
+const sectionItem = gsap.utils.toArray('#section04 > div');
 
 let scrollTween = gsap.to(sectionItem, {
     xPercent: -100 * (sectionItem.length - 1),
     ease: 'none',
     scrollTrigger: {
-        trigger: sectionBg06,
+        trigger: sectionBg04,
         start: 'top top',
-        end: () => '+=' + (sectionBg06.offsetWidth - innerWidth),
+        end: () => '+=' + (sectionBg04.offsetWidth - innerWidth),
         pin: true,
         anticipatepin: 1,
         scrub: 1,
@@ -188,25 +187,25 @@ let scrollTween = gsap.to(sectionItem, {
 });
 gsap.timeline({
     scrollTrigger: {
-        trigger: '.section06-00',
+        trigger: '.section04-00',
         start: 'left center',
         end: '+=3000',
         toggleActions: 'play none none reverse',
 
         markers: false,
         onEnter: () => {
-            // .section06-00 트리거에 도착했을 때 실행할 애니메이션 코드
-            gsap.set('.section06-00 > .section06_main > img', { width: 0 });
-            gsap.from('.section06-00 > .section06_main > h1', { duration: 1, opacity: 0, x: 400 });
-            gsap.to('.section06-00 > .section06_main > img', { duration: 1, width: '60vw' });
-            gsap.from('.section06-00 > .section06_main > p', { duration: 1, opacity: 0, x: 400 });
+            // .section04-00 트리거에 도착했을 때 실행할 애니메이션 코드
+            gsap.set('.section04-00 > .section04_main > img', { width: 0 });
+            gsap.from('.section04-00 > .section04_main > h1', { duration: 1, opacity: 0, x: 400 });
+            gsap.to('.section04-00 > .section04_main > img', { duration: 1, width: '60vw' });
+            gsap.from('.section04-00 > .section04_main > p', { duration: 1, opacity: 0, x: 400 });
         },
     },
 });
 
 gsap.timeline({
     scrollTrigger: {
-        trigger: '.section06-01',
+        trigger: '.section04-01',
         containerAnimation: scrollTween,
         start: 'left center',
         end: '+=3000',
@@ -214,15 +213,15 @@ gsap.timeline({
         markers: false,
 
         onEnter: () => {
-            // .section06-01 트리거에 도착했을 때 실행할 애니메이션 코드
-            gsap.from('.section06-01 > h1', { duration: 1, opacity: 0, x: 200 });
-            gsap.from('.section06-01 > .row_desc', { duration: 1, opacity: 0, x: -400 });
+            // .section04-01 트리거에 도착했을 때 실행할 애니메이션 코드
+            gsap.from('.section04-01 > h1', { duration: 1, opacity: 0, x: 200 });
+            gsap.from('.section04-01 > .row_desc', { duration: 1, opacity: 0, x: -400 });
         },
     },
 });
 gsap.timeline({
     scrollTrigger: {
-        trigger: '.section06-02',
+        trigger: '.section04-02',
         containerAnimation: scrollTween,
         start: 'left center',
         end: '+=3000',
@@ -230,15 +229,15 @@ gsap.timeline({
         markers: false,
 
         onEnter: () => {
-            // .section06-02 트리거에 도착했을 때 실행할 애니메이션 코드
-            gsap.from('.section06-02 > h1', { duration: 1, opacity: 0, x: 200 });
-            gsap.from('.section06-02 > .row_desc', { duration: 1, opacity: 0, x: -400 });
+            // .section04-02 트리거에 도착했을 때 실행할 애니메이션 코드
+            gsap.from('.section04-02 > h1', { duration: 1, opacity: 0, x: 200 });
+            gsap.from('.section04-02 > .row_desc', { duration: 1, opacity: 0, x: -400 });
         },
     },
 });
 gsap.timeline({
     scrollTrigger: {
-        trigger: '.section06-03',
+        trigger: '.section04-03',
         containerAnimation: scrollTween,
         start: 'left center',
         end: '+=3000',
@@ -246,15 +245,15 @@ gsap.timeline({
         markers: false,
 
         onEnter: () => {
-            // .section06-03 트리거에 도착했을 때 실행할 애니메이션 코드
-            gsap.from('.section06-03 > h1', { duration: 1, opacity: 0, x: 200 });
-            gsap.from('.section06-03 > .row_desc', { duration: 1, opacity: 0, x: -400 });
+            // .section04-03 트리거에 도착했을 때 실행할 애니메이션 코드
+            gsap.from('.section04-03 > h1', { duration: 1, opacity: 0, x: 200 });
+            gsap.from('.section04-03 > .row_desc', { duration: 1, opacity: 0, x: -400 });
         },
     },
 });
 gsap.timeline({
     scrollTrigger: {
-        trigger: '.section06-04',
+        trigger: '.section04-04',
         containerAnimation: scrollTween,
         start: 'left center',
         end: '+=3000',
@@ -262,15 +261,15 @@ gsap.timeline({
         markers: false,
 
         onEnter: () => {
-            // .section06-04 트리거에 도착했을 때 실행할 애니메이션 코드
-            gsap.from('.section06-04 > h1', { duration: 1, opacity: 0, x: 200 });
-            gsap.from('.section06-04 > .row_desc', { duration: 1, opacity: 0, x: -400 });
+            // .section04-04 트리거에 도착했을 때 실행할 애니메이션 코드
+            gsap.from('.section04-04 > h1', { duration: 1, opacity: 0, x: 200 });
+            gsap.from('.section04-04 > .row_desc', { duration: 1, opacity: 0, x: -400 });
         },
     },
 });
 gsap.timeline({
     scrollTrigger: {
-        trigger: '.section06-05',
+        trigger: '.section04-05',
         containerAnimation: scrollTween,
         start: 'left center',
         end: '+=3000',
@@ -278,14 +277,14 @@ gsap.timeline({
         markers: false,
 
         onEnter: () => {
-            // .section06-05 트리거에 도착했을 때 실행할 애니메이션 코드
-            gsap.from('.section06-05 > h1', { duration: 1, opacity: 0, x: 200 });
-            gsap.from('.section06-05 > .row_desc', { duration: 1, opacity: 0, x: -400 });
+            // .section04-05 트리거에 도착했을 때 실행할 애니메이션 코드
+            gsap.from('.section04-05 > h1', { duration: 1, opacity: 0, x: 200 });
+            gsap.from('.section04-05 > .row_desc', { duration: 1, opacity: 0, x: -400 });
         },
     },
 });
 
-// section06
+// section04
 
 const ani07 = gsap.timeline();
 
