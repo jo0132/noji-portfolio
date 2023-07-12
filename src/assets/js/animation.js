@@ -4,6 +4,23 @@ const sectionBg01 = document.getElementById('section01');
 const sectionBg03 = document.getElementById('section03');
 const sectionBg05 = document.getElementById('section05');
 
+document
+    .querySelectorAll('.go_btn')
+    .forEach(
+        button =>
+            (button.innerHTML =
+                '<div><span>' + button.textContent.trim().split('').join('</span><span>') + '</span></div>'),
+    );
+
+document
+    .querySelectorAll('.go_btn02')
+    .forEach(
+        button =>
+            (button.innerHTML =
+                '<div><span>' + button.textContent.trim().split('').join('</span><span>') + '</span></div>'),
+    );
+// go_btn's
+
 gsap.set(sectionBg01, { position: 'fixed' });
 setTimeout(() => {
     const ani = gsap.timeline();
@@ -28,7 +45,7 @@ const ani1 = gsap.timeline();
 ani1.to('#section1 .t1', { duration: 3, xPercent: 250, ease: 'expo.out' }, 'text')
     .to('#section1 .t2', { duration: 3, xPercent: -250, ease: 'expo.out' }, 'text')
     .to('#section1 .t3', { duration: 3, xPercent: 250, ease: 'expo.out' }, 'text')
-    .to('#section1 .text-wrap span', { yPercent: 3000, stagger: { amount: 3, from: 'random' } }, '-=1')
+    .to('#section1 .text-wrap span', { yPercent: 800, stagger: { amount: 3, from: 'random' } }, '-=1')
     .to('#section1 .bg-wrap .bg', { autoAlpha: 0, duration: 2 }, '-=2');
 
 ScrollTrigger.create({
@@ -106,7 +123,13 @@ document.addEventListener('DOMContentLoaded', () => {
             x = 0;
             y = -200;
         } else if (item.classList.contains('s5')) {
-            x = -200;
+            x = 200;
+            y = 0;
+        } else if (item.classList.contains('s6')) {
+            x = 0;
+            y = -200;
+        } else if (item.classList.contains('s7')) {
+            x = 200;
             y = 0;
         }
 
@@ -135,6 +158,18 @@ document.addEventListener('DOMContentLoaded', () => {
             },
         });
         item.style.opacity = '0';
+        gsap.to(item, {
+            xPercent: -10,
+            ease: 'none',
+            duration: 0.5,
+            scrollTrigger: {
+                trigger: item,
+                start: 'top bottom',
+                end: 'bottom top',
+                markers: true,
+                scrub: 0.5,
+            },
+        });
     });
 });
 
@@ -153,7 +188,7 @@ gsap.from('.end_title span', {
     scrollTrigger: {
         trigger: '.end_title',
         start: 'top center',
-        end: '+=1500',
+        end: '+=1300',
         pin: true,
         markers: true,
         scrub: 1,
@@ -214,8 +249,11 @@ gsap.timeline({
 
         onEnter: () => {
             // .section04-01 트리거에 도착했을 때 실행할 애니메이션 코드
-            gsap.from('.section04-01 > h1', { duration: 1, opacity: 0, x: 200 });
-            gsap.from('.section04-01 > .row_desc', { duration: 1, opacity: 0, x: -400 });
+            gsap.to('.section04-01 > h1', { duration: 0, opacity: 0, x: 200 });
+            gsap.to('.section04-01 > .row_desc', { duration: 0, opacity: 0, x: -400 });
+
+            gsap.to('.section04-01 > h1', { duration: 1, opacity: 1, x: 0 });
+            gsap.to('.section04-01 > .row_desc', { duration: 1, opacity: 1, x: 0 });
         },
     },
 });
@@ -230,8 +268,11 @@ gsap.timeline({
 
         onEnter: () => {
             // .section04-02 트리거에 도착했을 때 실행할 애니메이션 코드
-            gsap.from('.section04-02 > h1', { duration: 1, opacity: 0, x: 200 });
-            gsap.from('.section04-02 > .row_desc', { duration: 1, opacity: 0, x: -400 });
+            gsap.to('.section04-02 > h1', { duration: 0, opacity: 0, x: 200 });
+            gsap.to('.section04-02 > .row_desc', { duration: 0, opacity: 0, x: -400 });
+
+            gsap.to('.section04-02 > h1', { duration: 1, opacity: 1, x: 0 });
+            gsap.to('.section04-02 > .row_desc', { duration: 1, opacity: 1, x: 0 });
         },
     },
 });
@@ -246,8 +287,11 @@ gsap.timeline({
 
         onEnter: () => {
             // .section04-03 트리거에 도착했을 때 실행할 애니메이션 코드
-            gsap.from('.section04-03 > h1', { duration: 1, opacity: 0, x: 200 });
-            gsap.from('.section04-03 > .row_desc', { duration: 1, opacity: 0, x: -400 });
+            gsap.to('.section04-03 > h1', { duration: 0, opacity: 0, x: 200 });
+            gsap.to('.section04-03 > .row_desc', { duration: 0, opacity: 0, x: -400 });
+
+            gsap.to('.section04-03 > h1', { duration: 1, opacity: 1, x: 0 });
+            gsap.to('.section04-03 > .row_desc', { duration: 1, opacity: 1, x: 0 });
         },
     },
 });
@@ -262,8 +306,11 @@ gsap.timeline({
 
         onEnter: () => {
             // .section04-04 트리거에 도착했을 때 실행할 애니메이션 코드
-            gsap.from('.section04-04 > h1', { duration: 1, opacity: 0, x: 200 });
-            gsap.from('.section04-04 > .row_desc', { duration: 1, opacity: 0, x: -400 });
+            gsap.to('.section04-04 > h1', { duration: 0, opacity: 0, x: 200 });
+            gsap.to('.section04-04 > .row_desc', { duration: 0, opacity: 0, x: -400 });
+
+            gsap.to('.section04-04 > h1', { duration: 1, opacity: 1, x: 0 });
+            gsap.to('.section04-04 > .row_desc', { duration: 1, opacity: 1, x: 0 });
         },
     },
 });
@@ -278,27 +325,40 @@ gsap.timeline({
 
         onEnter: () => {
             // .section04-05 트리거에 도착했을 때 실행할 애니메이션 코드
-            gsap.from('.section04-05 > h1', { duration: 1, opacity: 0, x: 200 });
-            gsap.from('.section04-05 > .row_desc', { duration: 1, opacity: 0, x: -400 });
+            gsap.to('.section04-05 > h1', { duration: 0, opacity: 0, x: 200 });
+            gsap.to('.section04-05 > .row_desc', { duration: 0, opacity: 0, x: -400 });
+
+            gsap.to('.section04-05 > h1', { duration: 1, opacity: 1, x: 0 });
+            gsap.to('.section04-05 > .row_desc', { duration: 1, opacity: 1, x: 0 });
         },
     },
 });
 
 // section04
 
+new TypeIt('.section05_inner > .section05_title01', {
+    waitUntilVisible: true,
+    afterComplete: () => {
+        // 첫 번째 애니메이션이 완료된 후에 실행될 콜백 함수를 추가합니다.
+        new TypeIt('.section05_inner > .section05_title02', {}).type('please').break().type('contact me!').go();
+    },
+})
+    .type('If you like my')
+    .break()
+    .type('portfolio')
+    .go();
+
 const ani05 = gsap.timeline();
-
 ani05
-
-    .set('.section05_inner > h2', { duration: 1, opacity: 0 })
-    .to('.section05_inner > h2', { duration: 1, opacity: 1 });
+    .set('.section05_img', { duration: 1, x: -300, opacity: 0 })
+    .to('.section05_img', { delay: 6, duration: 1, x: 0, opacity: 1 });
 
 ScrollTrigger.create({
     animation: ani05,
     trigger: sectionBg05,
     start: 'top top',
-    end: '+=5000',
-    scrub: true,
+    end: '+=2000',
+    // scrub: true,
     pin: true,
     anticipatePin: 1,
     markers: false,
