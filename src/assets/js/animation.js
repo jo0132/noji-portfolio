@@ -339,9 +339,14 @@ gsap.timeline({
 
 new TypeIt('.section05_inner > .section05_title01', {
     waitUntilVisible: true,
+    cursor: false,
     afterComplete: () => {
         // 첫 번째 애니메이션이 완료된 후에 실행될 콜백 함수를 추가합니다.
-        new TypeIt('.section05_inner > .section05_title02', {}).type('please').break().type('contact me!').go();
+        new TypeIt('.section05_inner > .section05_title02', { cursor: false })
+            .type('please')
+            .break()
+            .type('contact me!')
+            .go();
     },
 })
     .type('If you like my')
