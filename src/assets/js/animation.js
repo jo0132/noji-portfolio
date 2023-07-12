@@ -179,6 +179,7 @@ let splitWrap = splitText.split('').join('</span><span>');
 text.innerHTML = splitWrap = '<span>' + splitWrap + '</span>';
 
 gsap.from('.end_title span', {
+    delay: 5,
     yPercent: 200,
     autoAlpha: 0,
     duration: 2,
